@@ -1,7 +1,8 @@
 import { ChosenCoffeeContainer } from "./ChosenCoffeeCard.Styles";
-import ExpressoTradicional from '../images/ExpressoTradicional.svg'
 import { Minus, Plus, Trash } from "phosphor-react";
 import { priceFormatter } from "../utils/priceFormatter";
+import { useContext } from "react";
+import { CoffeeContext } from "../contexts/CoffeeContext";
 
 interface Coffee {
     coffeeName: string,
@@ -10,6 +11,42 @@ interface Coffee {
     qtd: number,
 }
 export function ChosenCoffeeCard ({coffeeName,image,price,qtd}:Coffee) {
+    const {cart, setCart} = useContext(CoffeeContext)
+
+    function handleDecreaseQuantity () {
+        const cartCopia = [...cart];
+
+        cartCopia.forEach((item)=> {
+            if(item.coffeeName === coffeeName){
+                if(item.qtd != 1) {
+                    item.qtd -= 1;
+                    setCart(cartCopia)
+                }
+            }
+        })
+    }
+
+    function handleIncreaseQuantity () {
+        const cartCopia = [...cart];
+
+        cartCopia.forEach((item)=> {
+            if(item.coffeeName === coffeeName){
+                item.qtd += 1;
+                console.log('mudou')
+                console.log(cart)
+            }
+        })
+        setCart(cartCopia)
+    }
+
+    function handleDeleteCoffee () {
+        const updatedCart = cart.filter((item)=>{
+            return item.coffeeName !== coffeeName
+        })
+
+        setCart(updatedCart)
+    }
+
     return (
         <ChosenCoffeeContainer>
             <div className="container">
@@ -18,18 +55,18 @@ export function ChosenCoffeeCard ({coffeeName,image,price,qtd}:Coffee) {
                     <h2>{coffeeName}</h2>
                     <div className="qtd">
                         <div className="quantity">
-                            <Minus/>
+                            <Minus onClick={handleDecreaseQuantity}/>
                             <span>{qtd}</span>
-                            <Plus/>
+                            <Plus onClick={handleIncreaseQuantity}/>
                         </div>
                         <button>
                             <Trash size={16}/>
-                            <span>REMOVER</span>
+                            <span onClick={handleDeleteCoffee}>REMOVER</span>
                         </button>
                     </div>
                 </div>
             </div>
-            <div>{priceFormatter.format(price)}</div>
+            <div>{priceFormatter.format(price*qtd)}</div>
         </ChosenCoffeeContainer>
     )
 }

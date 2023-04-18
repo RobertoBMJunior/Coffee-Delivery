@@ -1,12 +1,13 @@
 import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money } from "phosphor-react";
 import { CartContainer, CheckoutContainer, DeliveryAddressContainer, PaymentContainer, PaymentOptions, PaymentType } from "./styles";
 import { ChosenCoffeeCard } from "../../components/ChosenCoffeeCard";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { CoffeeContext } from "../../contexts/CoffeeContext";
 import { priceFormatter } from "../../utils/priceFormatter";
 
 export function Checkout () {
     const {cart} = useContext(CoffeeContext)
+
 
     const totalCoffee = cart.reduce((acumulador,cartItem)=> {
         return acumulador + cartItem.price*cartItem.qtd
@@ -82,7 +83,8 @@ export function Checkout () {
                                 qtd={item.qtd}
                             />
                         )
-                    })}
+                        })
+                    }
                     
                     <div className="total">
                         <div>
@@ -96,7 +98,7 @@ export function Checkout () {
                         </div>
                         <div>
                             <span>Total</span>
-                            <span>{priceFormatter.format(total)}</span>
+                            <span>{totalCoffee ? priceFormatter.format(total): priceFormatter.format(0)}</span>
                         </div>
                     </div>
                     <button>

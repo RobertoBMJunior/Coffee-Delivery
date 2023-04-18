@@ -60,6 +60,11 @@ export const ChosenCoffeeContainer = styled.div`
                     svg{
                         cursor: pointer;
                     }
+
+                    svg:hover{
+                        scale: 1.1;
+                        color: ${props => props.theme["purple-dark"]};
+                    }
                 }
     
     
