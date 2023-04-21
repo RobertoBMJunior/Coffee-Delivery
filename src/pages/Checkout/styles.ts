@@ -173,6 +173,19 @@ export const CartContainer = styled.section`
 
     background-color: ${props => props.theme["gray-100"]};
 
+    .emptyCart{
+        text-align: center;
+
+        font-family: 'Baloo 2';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 1.5rem;
+
+        padding-bottom: 1rem;
+
+        border-bottom: 1px solid ${props => props.theme["gray-300"]};
+    }
+
     .total{
         display: flex;
         flex-direction: column;

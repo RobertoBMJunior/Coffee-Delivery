@@ -83,7 +83,7 @@ export const CoffeeContainer = styled.div`
             }
         }
 
-        span:nth-child(2){
+        span:nth-child(1){
             font-family: 'Baloo 2';
             font-style: normal;
             font-weight: 800;
@@ -102,6 +102,7 @@ export const CoffeeContainer = styled.div`
             background-color: ${props => props.theme["purple-dark"]};
 
             cursor: pointer;
+            transition: background-color 0.2s;
 
             svg{
             color: ${props => props.theme["white-1"]};
@@ -109,6 +110,7 @@ export const CoffeeContainer = styled.div`
 
             &:hover{
                 background-color: ${props => props.theme["purple"]};
+                transition: background-color 0.2s;
             }
         }
     }

@@ -60,7 +60,7 @@ export const SuccessContainer = styled.main`
 
                     font-size: 1rem;
 
-                    span:nth-child(2){
+                    span:nth-child(2), .bold{
                         font-weight: 700;
                     }
                 }

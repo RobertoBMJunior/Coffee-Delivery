@@ -167,17 +167,19 @@ export function Checkout () {
             <section>
                 <h2>Cafés selecionados</h2>
                 <CartContainer>
-                    {cart.map(item => {
-                        return (
-                            <ChosenCoffeeCard
-                                key={item.coffeeName}
-                                coffeeName={item.coffeeName}
-                                image={item.image}
-                                price={item.price}
-                                qtd={item.qtd}
-                            />
-                        )
+                    { cart.length !== 0 ?
+                        cart.map(item => {
+                            return (
+                                <ChosenCoffeeCard
+                                    key={item.coffeeName}
+                                    coffeeName={item.coffeeName}
+                                    image={item.image}
+                                    price={item.price}
+                                    qtd={item.qtd}
+                                />
+                            )
                         })
+                    : <span className="emptyCart">O carrinho está vazio</span>
                     }
                     
                     <div className="total">

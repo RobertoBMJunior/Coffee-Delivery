@@ -18,12 +18,16 @@ export function Success () {
                             <MapPin size={16} weight="fill"/>
                         </div>
                         <div>
-                            <span>Entrega em 
-                                {addressData.road}, 
-                                {addressData.number} 
-                                {addressData.complement ? `- ${addressData.complement}` : null}</span>
-
-                            <span>{addressData.neighborhood} - {addressData.city}, {addressData.uf}</span>
+                            <span>
+                                Entrega em
+                                <span className="bold">
+                                    {addressData.road ? ` ${addressData.road}` : ' [INFORME A RUA]'},  
+                                    {addressData.number ? ` ${addressData.number}` : ' [INFORME O NÚMERO]'} 
+                                    {addressData.complement ? ` - ${addressData.complement}` : null}
+                                </span>
+                            </span> 
+                            
+                            <span>{addressData.neighborhood ? `${addressData.neighborhood} - ${addressData.city}, ${addressData.uf}` : ' [INFORME O BAIRRO] - [CIDADE], [UF]'}</span>
                         </div>
                     </article>
 
@@ -43,7 +47,7 @@ export function Success () {
                         </div>
                         <div>
                             <span>Pagamento na entrega</span>
-                            <span>{addressData.typePayment}</span>
+                            <span>{addressData.typePayment ? addressData.typePayment : ' [TIPO DE PAGAMENTO]'}</span>
                         </div>
                     </article>
 

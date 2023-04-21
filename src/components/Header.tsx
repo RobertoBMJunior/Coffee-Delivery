@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { CoffeeContext } from "../contexts/CoffeeContext";
 
 export function Header () {
-    const {cart} = useContext(CoffeeContext)
+    const {cart, addressData} = useContext(CoffeeContext)
 
     return(
         <HeaderContainer>
@@ -14,10 +14,10 @@ export function Header () {
                 <img src={LogoCaffee} alt="" />
             </NavLink>
             <div className="locale_and_cart">
-                <div className="locale">
+                <NavLink to='/checkout' className="locale">
                     <MapPin size={20} weight="fill"/>
-                    <span>Porto Alegre, RS</span>
-                </div>
+                    <span>{addressData.city ? `${addressData.city}, ${addressData.uf}` : 'INFORME SEU ENDEREÇO'}</span>
+                </NavLink>
 
                 <NavLink to="/checkout" className='cart'>
                     <ShoppingCart size={20} weight="fill"/>

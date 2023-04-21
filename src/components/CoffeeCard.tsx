@@ -5,6 +5,7 @@ import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useContext } from "react";
 import { CoffeeContext } from "../contexts/CoffeeContext";
+import { priceFormatter } from "../utils/priceFormatter";
 
 const CoffeeQuantityFormSchema = z.object({
     qtd: z.number(),
@@ -78,8 +79,7 @@ export function CoffeeCard ({image,information,information2,information3, coffee
             </span>
 
             <div className="price">
-                <span>R$</span>
-                <span>{price}</span>
+                <span>{priceFormatter.format(price)}</span>
                 <form action="" onSubmit={handleSubmit(handleAddCart)}>
                     <input 
                         type="number" 
@@ -87,7 +87,7 @@ export function CoffeeCard ({image,information,information2,information3, coffee
                         min={1} 
                         {...register('qtd', {valueAsNumber: true})}
                     />
-                    <button className="cart">
+                    <button className="cart" title="Adicionar ao carrinho">
                         <ShoppingCart size={20} weight="fill"/>
                     </button>
                 </form>

@@ -18,13 +18,28 @@ export const HeaderContainer = styled.header`
             align-items: center;
             gap: 4px;
 
+            text-decoration: none;
+
             padding: 10px;
             border-radius: 6px;
 
             background-color: ${props => props.theme["purple-light"]};
 
+            
+
             svg{
                 color: ${props => props.theme.purple}
+            }
+
+            &:hover{
+                background-color: ${props => props.theme["purple"]};
+                color: ${props => props.theme["purple-light"]};
+
+                transition: all 0.2s;
+
+                svg{
+                    color: ${props => props.theme["purple-light"]}
+                }
             }
         }
 
@@ -37,7 +52,8 @@ export const HeaderContainer = styled.header`
             background-color: ${props => props.theme["yellow-light"]};
 
             svg{
-            color: ${props => props.theme["yellow-dark"]};
+                color: ${props => props.theme["yellow-dark"]};
+                transition: all 0.2s;
             }
 
             span{
@@ -57,9 +73,24 @@ export const HeaderContainer = styled.header`
                 top: 25px;
                 right: 150px;
 
+                transition: all 0.2s;
+
                 /* position: relative;
                 top: -42px;
                 right: -20px; */
+            }
+
+            &:hover{
+                /* background-color: ${props => props.theme["yellow-dark"]}; */
+                svg{
+                    color: ${props => props.theme["gray-800"]};
+                    transition: all 0.2s;
+                }
+
+                span{
+                    background-color: ${props => props.theme["gray-800"]};
+                    transition: all 0.2s;
+                }
             }
         }
     }
