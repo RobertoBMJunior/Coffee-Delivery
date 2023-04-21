@@ -32,8 +32,6 @@ export function ChosenCoffeeCard ({coffeeName,image,price,qtd}:Coffee) {
         cartCopia.forEach((item)=> {
             if(item.coffeeName === coffeeName){
                 item.qtd += 1;
-                console.log('mudou')
-                console.log(cart)
             }
         })
         setCart(cartCopia)

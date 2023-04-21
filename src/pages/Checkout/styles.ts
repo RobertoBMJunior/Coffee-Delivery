@@ -1,24 +1,24 @@
 import styled from "styled-components";
 import * as RadioGroup from '@radix-ui/react-radio-group';
 
-export const CheckoutContainer = styled.main`
+export const CheckoutContainer = styled.form`
     display: flex;
     gap: 2rem;
     align-items: start;
 
     margin-top: 2.5rem;
 
-    section{
+    section, form{
         flex: 1;
     }
 
-    section>h2{
-            margin-bottom: 1rem;
+    section>h2, form>h2{
+        margin-bottom: 1rem;
     }
 
 
 `
-export const DeliveryAddressContainer = styled.form`
+export const DeliveryAddressContainer = styled.section`
     padding: 2.5rem;
 
     display: flex;
@@ -194,7 +194,11 @@ export const CartContainer = styled.section`
         }
     }
 
-    &>button{
+    .confirmOrder{
+        text-decoration: none;
+
+        width: 100%;
+
         font-weight: 700;
         line-height: 160%;
 
@@ -213,9 +217,19 @@ export const CartContainer = styled.section`
 
         transition: background-color 0.2s;
 
+        a{
+            width: 100%;
+            text-decoration: none;
+            color: ${props=> props.theme["white-1"]};
+        }
+
         &:hover{
             background-color: ${props => props.theme["yellow-dark"]};
             transition: background-color 0.2s;
+        }
+
+        &:disabled{
+            cursor: not-allowed;
         }
     }
 `

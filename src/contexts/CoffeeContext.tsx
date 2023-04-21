@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useState } from "react";
+import { ReactNode, createContext, useEffect, useState } from "react";
 
 import ExpressoTradicional from '../images/ExpressoTradicional.svg'
 import ExpressoAmericano from '../images/ExpressoAmericano.svg'
@@ -34,10 +34,23 @@ interface CoffeeCardProps{
     price: number
 }
 
+interface AddressDataProps {
+    cep: string,
+    road: string,
+    number: string,
+    complement: string,
+    neighborhood: string,
+    city: string,
+    uf: string,
+    typePayment: 'Cartão de Crédito' | 'Cartão de Débito' | 'Dinheiro'
+}
+
 interface CoffeeContextType{
-    cart: Coffee[]
     coffees: CoffeeCardProps[]
+    cart: Coffee[]
     setCart: (Coffee: Coffee[]) => void
+    addressData: AddressDataProps
+    setAddressData: (addressData: AddressDataProps) => void
 }
 
 interface CoffeeProviderProps{
@@ -47,7 +60,37 @@ interface CoffeeProviderProps{
 export const CoffeeContext = createContext({} as CoffeeContextType) 
 
 export function CoffeeProvider({children}:CoffeeProviderProps) {
-    const [cart, setCart] = useState<Coffee[]>([])
+    const [cart, setCart] = useState<Coffee[]>(recoverLocalStorageCart)
+    const [addressData, setAddressData] = useState<AddressDataProps>(recoverLocalStorageAddressData)
+
+    useEffect(()=>{
+        const stateJSON_1 = JSON.stringify(cart)
+        localStorage.setItem('@coffeeDelivery:cart-1.0.0', stateJSON_1)
+
+        const stateJSON_2 = JSON.stringify(addressData)
+        localStorage.setItem('@coffeeDelivery:addressData-1.0.0', stateJSON_2)
+
+    },[cart, addressData])
+
+    function recoverLocalStorageCart(){
+        const storedStateAsJSON = localStorage.getItem('@coffeeDelivery:cart-1.0.0')
+        if(storedStateAsJSON){
+            return JSON.parse(storedStateAsJSON)
+        }
+        else{
+            return []
+        }
+    }
+
+    function recoverLocalStorageAddressData(){
+        const storedStateAsJSON = localStorage.getItem('@coffeeDelivery:addressData-1.0.0')
+        if(storedStateAsJSON){
+            return JSON.parse(storedStateAsJSON)
+        }
+        else{
+            return {}
+        }
+    }
 
     const coffees = [
         {
@@ -165,6 +208,8 @@ export function CoffeeProvider({children}:CoffeeProviderProps) {
             cart,
             coffees,
             setCart,
+            addressData,
+            setAddressData
         }}>
             {children}
         </CoffeeContext.Provider>
