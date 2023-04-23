@@ -16,13 +16,12 @@ export function Header () {
             <div className="locale_and_cart">
                 <NavLink to='/checkout' className="locale">
                     <MapPin size={20} weight="fill"/>
-                    <span>{addressData.city ? `${addressData.city}, ${addressData.uf}` : 'INFORME SEU ENDEREÇO'}</span>
+                    <span>{addressData.city ? `${addressData.city}, ${addressData.uf}` : 'SEU ENDEREÇO'}</span>
                 </NavLink>
 
                 <NavLink to="/checkout" className='cart'>
                     <ShoppingCart size={20} weight="fill"/>
                     {cart.length != 0 ? <span>{cart.length}</span> : '' }
-                    
                 </NavLink>
             </div>
         </HeaderContainer>

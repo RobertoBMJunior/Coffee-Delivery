@@ -48,6 +48,8 @@ export const HeaderContainer = styled.header`
             border-radius: 6px;
             
             height: 40px;
+
+            text-decoration: none;
             
             background-color: ${props => props.theme["yellow-light"]};
 
@@ -69,15 +71,17 @@ export const HeaderContainer = styled.header`
                 border-radius: 100%;
 
 
-                position: absolute;
+                /* position: absolute;
                 top: 25px;
-                right: 150px;
+                right: 150px; */
 
                 transition: all 0.2s;
 
-                /* position: relative;
+                position: relative;
                 top: -42px;
-                right: -20px; */
+                right: -20px;
+
+                text-decoration: none;
             }
 
             &:hover{
@@ -95,5 +99,11 @@ export const HeaderContainer = styled.header`
         }
     }
 
+
+    @media only screen and (max-width: 490px) {
+        .locale>span{
+            display: none;
+        }
+    }
 
 `

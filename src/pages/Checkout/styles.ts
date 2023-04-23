@@ -8,18 +8,36 @@ export const CheckoutContainer = styled.form`
 
     margin-top: 2.5rem;
 
-    section, form{
-        flex: 1;
+    section{
+        width: 100%;
+        /* flex: 1; */
     }
 
-    section>h2, form>h2{
+    section>h2{
         margin-bottom: 1rem;
     }
+
+    /* section:nth-child(1){
+
+    } */
+
+    @media only screen and (max-width: 1216px) {
+        flex-direction: column;
+    }
+
+    @media only screen and (max-width: 340px) {
+        .address, .payment{
+            flex-direction: column;
+        }
+    }
+
 
 
 `
 export const DeliveryAddressContainer = styled.section`
     padding: 2.5rem;
+
+    margin-bottom: 1.5rem;
 
     display: flex;
     flex-direction: column;
@@ -42,19 +60,19 @@ export const DeliveryAddressContainer = styled.section`
     }
 
     .inputtype1{
-        width: 200px;
+        width: 170px;
     }
 
     .boxInputs{
         display: flex;
         gap: 0.75rem;
 
-        input:nth-child(2){
-            flex: 1;
+        input:nth-child(1){
+            width: 100px;
         }
 
-        input:nth-child(3){
-            flex: 2;
+        input:nth-child(2){
+            flex: 3;
         }
 
     }
@@ -63,14 +81,25 @@ export const DeliveryAddressContainer = styled.section`
         display: flex;
         gap: 0.75rem;
 
-        input:nth-child(2){
+        input:nth-child(1){
+            width: 70%;
+        }
+
+    }
+
+    .boxInputs3{
+        width: 100%;
+
+        display: flex;
+        gap: 0.75rem;
+
+        input:nth-child(1){
             flex: 1;
         }
 
-        input:nth-child(3){
+        input:nth-child(2){
             width: 60px;
         }
-
     }
 
     .address{
@@ -92,6 +121,60 @@ export const DeliveryAddressContainer = styled.section`
             font-size: 1rem;
         }
     }
+
+    @media only screen and (max-width: 1216px) {
+        .inputtype1{
+            width: 50%;
+        }
+    }
+
+    @media only screen and (max-width: 590px) {
+        .inputtype1{
+            width: 100%;
+        }
+
+        .boxInputs2{
+            flex-direction: column;
+
+            input:nth-child(1){
+                width: 100%;
+            }
+
+            input{
+                width:100%
+            }
+        }
+    }
+
+    @media only screen and (max-width: 590px) {
+        padding: 2.5rem 1rem;
+    }
+
+    @media only screen and (max-width: 480px) {
+        .inputtype1{
+            width: 100%;
+        }
+
+        .boxInputs{
+            flex-direction: column;
+
+            input:nth-child(1){
+                width: 100%;
+            }
+        }
+
+        .boxInputs2{
+            flex-direction: column;
+
+            input:nth-child(1){
+                width: 100%;
+            }
+
+            input{
+                width:100%
+            }
+        }
+    }
 `
 
 export const PaymentContainer = styled.section`
@@ -99,7 +182,7 @@ export const PaymentContainer = styled.section`
 
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 0.5rem;
 
     background-color: ${props => props.theme["gray-100"]};
 
@@ -123,12 +206,18 @@ export const PaymentContainer = styled.section`
         }
     }
 
+    @media only screen and (max-width: 590px) {
+        padding: 2.5rem 1rem;
+    }
 `
 
 export const PaymentType = styled(RadioGroup.Root)`
     display: flex;
     align-items: center;
     gap: 0.75rem;
+
+    flex-wrap: wrap;
+
 `
 
 export const PaymentOptions = styled(RadioGroup.Item)`
@@ -136,6 +225,7 @@ export const PaymentOptions = styled(RadioGroup.Item)`
 
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.75rem;
 
     border: 0;
@@ -244,5 +334,9 @@ export const CartContainer = styled.section`
         &:disabled{
             cursor: not-allowed;
         }
+    }
+
+    @media only screen and (max-width: 590px) {
+        padding: 2.5rem 1rem;
     }
 `

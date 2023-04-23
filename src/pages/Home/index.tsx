@@ -37,7 +37,7 @@ export function Home () {
             </CoffeeIntroduction>
 
             <CoffeeChoose>
-                <h1>Nossos cafes</h1>
+                <h1>Nossos cafés</h1>
                 
                 <div className='coffeeOptions'>
                     {

@@ -4,7 +4,6 @@ import { ChosenCoffeeCard } from "../../components/ChosenCoffeeCard";
 import { useContext, useEffect } from "react";
 import { CoffeeContext } from "../../contexts/CoffeeContext";
 import { priceFormatter } from "../../utils/priceFormatter";
-import { NavLink } from "react-router-dom";
 import * as z from 'zod';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
@@ -92,7 +91,7 @@ export function Checkout () {
                     />
                     <div className="boxInputs">
                         <input 
-                            className="inputtype1" 
+                            // className="inputtype1" 
                             type="text" 
                             placeholder="Número" 
                             required
@@ -112,18 +111,20 @@ export function Checkout () {
                             required
                             {...register('neighborhood')} 
                         />
-                        <input 
-                            type="text" 
-                            placeholder="Cidade"
-                            required
-                            {...register('city')} 
+                        <div className="boxInputs3">
+                            <input 
+                                type="text" 
+                                placeholder="Cidade"
+                                required
+                                {...register('city')} 
+                                />
+                            <input 
+                                type="text" 
+                                placeholder="UF" 
+                                required
+                                {...register('uf')}
                             />
-                        <input 
-                            type="text" 
-                            placeholder="UF" 
-                            required
-                            {...register('uf')}
-                        />
+                        </div>
                     </div>
                 </DeliveryAddressContainer>
 

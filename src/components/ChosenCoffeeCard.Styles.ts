@@ -106,4 +106,44 @@ export const ChosenCoffeeContainer = styled.div`
         font-weight: 700;
         font-size: 1rem;
     }
+
+    @media only screen and (max-width: 550px) {
+        &{
+            flex-direction: column;
+            
+            div:nth-child(2){
+                text-align: center;
+            }   
+        }
+
+
+        .container{
+            justify-content: space-between;
+
+            img{
+                width: 100px;
+            }
+
+            /* .name_and_qtd{
+                width: 100%;
+                flex: 1;
+            } */
+        }
+
+        .qtd{
+            width: 100%;
+            flex-direction: column;
+            
+            button{
+                justify-content: center;
+                width: 100px;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 350px) {
+        .container img {
+            width: 80px;
+        }
+    }
 `

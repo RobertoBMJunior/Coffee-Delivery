@@ -1,18 +1,19 @@
 import styled from "styled-components";
 
 export const HomeContainer = styled.main`
-    padding: 94px 0;
+    padding: 2rem 0 3rem;
 
 `
 
 export const CoffeeIntroduction = styled.section`
-    height: 444px;
+    height: 400px;
     align-items: start;
     justify-content: space-between;
 
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: 124px 52px 68px;
+    /* grid-template-rows: auto auto auto; */
     column-gap: 1rem;
 
     .first{
@@ -21,7 +22,7 @@ export const CoffeeIntroduction = styled.section`
         width: 588px;
 
         font-family: 'Baloo 2', cursive;
-        font-size: 48px;
+        font-size: 3rem;
         font-weight: 800;
         color: ${props => props.theme["gray-800"]}
     }
@@ -37,7 +38,7 @@ export const CoffeeIntroduction = styled.section`
 
         grid-column: 1 ;
         grid-row: 2;
-        font-size: 20px;
+        font-size: 1.25rem;
         font-style: normal;
     }
 
@@ -51,7 +52,7 @@ export const CoffeeIntroduction = styled.section`
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: 40px;
+        gap: 2.5rem;
 
         .items{
             font-size: 1rem;
@@ -64,27 +65,194 @@ export const CoffeeIntroduction = styled.section`
 
     }
 
-    @media only screen and (max-width: 1280px) {
-    &{
-        grid-template-columns: auto;
-        grid-template-rows: 124px auto 52px 68px;
+    /* @media only screen and (max-width: 1280px) {
+        &{
+            justify-content: flex-start;
+        }
+    } */
 
-        .second{
-            grid-column: 1 ;
-            grid-row:  2;
+    @media only screen and (max-width: 1216px) {
+        &{
+           justify-content: space-between;
+           grid-template-rows: 82px 80px 150px;
+
+           height: 350px;
         }
 
-        .third{
-            grid-column: 1 ;
-            grid-row:  3;
+        img{
+            width: 360px;
+        }
+
+        .first{
+            font-size: 2rem;
         }
 
         .fourth{
-            grid-column: 1;
-            grid-row: 4;
+            margin-top: 1rem;
+            gap: 1rem;
+        }
+
+        .first, .third, .fourth{
+            width: 460px;
         }
     }
-}
+
+
+    @media only screen and (max-width: 928px) {
+    
+        &{
+            height: 36.5rem;
+
+            grid-template-columns: auto;
+            grid-template-rows: 124px 270px 30px 68px;
+            gap: 1rem;
+
+            .first, .third{
+                width: 100%;
+            }
+
+            .first{
+                font-size: 3rem;
+            }
+
+            .second{
+                grid-column: 1 ;
+                grid-row:  2;
+            }
+
+            .third{
+                margin-top: 0;
+
+                grid-column: 1 ;
+                grid-row:  3;
+            }
+
+            .fourth{
+                margin-top: 0;
+
+                width: 90%;
+
+                grid-column: 1;
+                grid-row: 4;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 756px) {
+        &{
+            grid-template-rows: 124px 270px 52px 68px;
+        }
+
+        .fourth{
+            width: 100%;
+        }
+    }
+
+    @media only screen and (max-width: 657px) {
+        &{
+            grid-template-rows: 104px 270px 52px 68px;
+        }
+        
+        .first{
+            font-size: 2.5rem;
+        }
+    }
+
+    @media only screen and (max-width: 640px) {
+        &{
+            height: 39rem;
+
+            grid-template-rows: 104px 270px 52px 136px;
+        }
+
+        .fourth{
+            width: 70%;
+        }
+    }
+
+    @media only screen and (max-width: 565px) {
+        .first{
+            font-size: 2.1rem;
+        }
+
+        .fourth{
+            width: 100%;
+        }
+    }
+
+    @media only screen and (max-width: 490px) {
+        &{
+            height: 35.5rem;
+
+            grid-template-rows: 75px 243px 52px 136px;
+        }
+
+        .first{
+            font-size: 1.8rem;
+        }
+
+        img{
+            width: 320px;
+        }
+    }
+
+    @media only screen and (max-width: 437px) {
+        .first{
+            font-size: 1.7rem;
+        }
+
+        .third{
+            font-size: 1.1rem;
+        }
+    }
+
+    @media only screen and (max-width: 350px) {
+        &{
+            height: 32rem;
+            grid-template-rows: 75px 187px 52px 136px;
+        }
+
+        .first{
+            font-size: 1.6rem;
+        }
+
+        img{
+            width: 246px;
+        }
+    }
+
+    @media only screen and (max-width: 334px) {
+        &{
+            height: 30rem;
+            grid-template-rows: 55px 187px 38px 136px;
+        }
+
+        .first{
+            font-size: 1.3rem;
+        }
+
+        .third{
+            font-size: 0.9rem;
+        }
+
+        .fourth{
+            font-size: 0.7rem;
+        }
+
+        img{
+            width: 246px;
+        }
+    }
+
+    @media only screen and (max-width: 321px) {
+        &{
+            height: 32rem;
+            grid-template-rows: 55px 187px 38px 136px;
+         }
+    }
+
+
+
 `
 
 export const CoffeeChoose = styled.section`
@@ -100,9 +268,36 @@ export const CoffeeChoose = styled.section`
 
     .coffeeOptions{
         display: flex;
+        justify-content: flex-start;
         flex-wrap: wrap;
 
         column-gap: 2rem;
         row-gap: 2.5rem;
     }
+
+    @media only screen and (max-width: 1216px) {
+        .coffeeOptions{
+            align-content: flex-start;
+            /* justify-content: space-between; */
+        }
+    }
+
+    @media only screen and (max-width: 640px) {
+        .coffeeOptions{
+            justify-content: center;
+        }
+    }
+
+    @media only screen and (max-width: 490px) {
+        h1{
+            font-size: 1.6rem;
+        }
+    }
+
+    @media only screen and (max-width: 334px) {
+        h1{
+            font-size: 1.3rem;
+        }
+    }
+
 ` 
