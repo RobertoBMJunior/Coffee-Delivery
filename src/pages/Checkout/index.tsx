@@ -60,7 +60,7 @@ export function Checkout () {
         
         setAddressData(newAddressData)
         
-        const url = '/Coffee-Delivery/success'
+        const url = '/success'
         window.location.assign(url)
     }
 
