@@ -23,7 +23,7 @@ type deliveryAddressFormInputs = z.infer<typeof deliveryAddressFormSchema>
 
 
 export function Checkout () {
-    const {cart, addressData ,setAddressData} = useContext(CoffeeContext)
+    const {cart,setAddressData} = useContext(CoffeeContext)
     
     const { register, handleSubmit, control } = useForm<deliveryAddressFormInputs>({
         resolver: zodResolver(deliveryAddressFormSchema),
@@ -60,7 +60,7 @@ export function Checkout () {
         
         setAddressData(newAddressData)
         
-        const url = '/success'
+        const url = '/Coffee-Delivery/success'
         window.location.assign(url)
     }
 
