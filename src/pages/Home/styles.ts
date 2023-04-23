@@ -60,7 +60,37 @@ export const CoffeeIntroduction = styled.section`
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 1.375rem;
+            gap: 1rem;
+
+
+            .cart, .package, .timer, .coffeeCup{
+                color: ${props=> props.theme["white-1"]};
+
+                width: 2rem;
+                height: 2rem;
+
+                border-radius: 100%;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .cart{
+                background-color: ${props=> props.theme["yellow-dark"]};
+            }
+
+            .package{
+                background-color: ${props=> props.theme["gray-700"]};
+            }
+
+            .timer{
+                background-color: ${props=> props.theme["yellow"]};
+            }
+
+            .coffeeCup{
+                background-color: ${props=> props.theme["purple"]};
+            }
         }
 
     }
@@ -74,9 +104,9 @@ export const CoffeeIntroduction = styled.section`
     @media only screen and (max-width: 1216px) {
         &{
            justify-content: space-between;
-           grid-template-rows: 82px 80px 150px;
+           grid-template-rows: 82px 80px 205px;
 
-           height: 350px;
+           height: 375px;
         }
 
         img{
@@ -160,9 +190,9 @@ export const CoffeeIntroduction = styled.section`
 
     @media only screen and (max-width: 640px) {
         &{
-            height: 39rem;
+            height: 41.5rem;
 
-            grid-template-rows: 104px 270px 52px 136px;
+            grid-template-rows: 104px 270px 52px 180px;
         }
 
         .fourth{
@@ -182,7 +212,7 @@ export const CoffeeIntroduction = styled.section`
 
     @media only screen and (max-width: 490px) {
         &{
-            height: 35.5rem;
+            height: 38rem;
 
             grid-template-rows: 75px 243px 52px 136px;
         }
@@ -208,8 +238,8 @@ export const CoffeeIntroduction = styled.section`
 
     @media only screen and (max-width: 350px) {
         &{
-            height: 32rem;
-            grid-template-rows: 75px 187px 52px 136px;
+            height: 34.5rem;
+            grid-template-rows: 75px 187px 52px 180px;
         }
 
         .first{
@@ -223,7 +253,7 @@ export const CoffeeIntroduction = styled.section`
 
     @media only screen and (max-width: 334px) {
         &{
-            height: 30rem;
+            height: 33rem;
             grid-template-rows: 55px 187px 38px 136px;
         }
 
@@ -246,7 +276,7 @@ export const CoffeeIntroduction = styled.section`
 
     @media only screen and (max-width: 321px) {
         &{
-            height: 32rem;
+            height: 33.5rem;
             grid-template-rows: 55px 187px 38px 136px;
          }
     }

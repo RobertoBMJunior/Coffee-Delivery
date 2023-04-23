@@ -17,19 +17,27 @@ export function Home () {
                 <h2 className='third'>Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora</h2>
                 <div className='fourth'>
                     <div className='items'>
-                        <ShoppingCart size={18} weight='fill'/>
+                        <div className='cart'>
+                            <ShoppingCart size={18} weight='fill'/>
+                        </div>
                         <span>Compra simples e segura</span>
                     </div>
                     <div className='items'>
-                        <Package size={18} weight='fill'/>
+                        <div className='package'>
+                            <Package size={18} weight='fill'/>
+                        </div>
                         <span>Embalagem mantém o café intacto</span>
                     </div>
                     <div className='items'>
-                        <Timer size={18} weight='fill'/>
+                        <div className='timer'>
+                            <Timer size={18} weight='fill'/>
+                        </div>
                         <span>Entrega rápida e rastreada</span>
                     </div>
                     <div className='items'>
-                        <Coffee size={18} weight='fill'/>
+                        <div className='coffeeCup'>
+                            <Coffee size={18} weight='fill'/>
+                        </div>
                         <span>O café chega fresquinho até você</span>
                     </div>
                 </div>
