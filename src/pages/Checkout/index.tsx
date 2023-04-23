@@ -1,12 +1,13 @@
 import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money } from "phosphor-react";
 import { CartContainer, CheckoutContainer, DeliveryAddressContainer, PaymentContainer, PaymentOptions, PaymentType } from "./styles";
 import { ChosenCoffeeCard } from "../../components/ChosenCoffeeCard";
-import { useContext, useEffect } from "react";
+import { useContext} from "react";
 import { CoffeeContext } from "../../contexts/CoffeeContext";
 import { priceFormatter } from "../../utils/priceFormatter";
 import * as z from 'zod';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom"
 
 const deliveryAddressFormSchema = z.object({
     cep: z.string(),
@@ -46,6 +47,8 @@ export function Checkout () {
     const entrega = 5.50;
     const total = totalCoffee + entrega;
 
+    const navigate = useNavigate()
+
     function handleConfirmOrder(data: deliveryAddressFormInputs){
         const newAddressData = {
             cep: data.cep,
@@ -61,7 +64,8 @@ export function Checkout () {
         setAddressData(newAddressData)
         
         const url = '/success'
-        window.location.assign(url)
+        // window.location.assign(url)
+        return navigate(url)
     }
 
     return(
