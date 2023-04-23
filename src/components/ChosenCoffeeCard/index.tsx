@@ -1,8 +1,8 @@
-import { ChosenCoffeeContainer } from "./ChosenCoffeeCard.Styles";
+import { ChosenCoffeeContainer } from "./styles";
 import { Minus, Plus, Trash } from "phosphor-react";
-import { priceFormatter } from "../utils/priceFormatter";
+import { priceFormatter } from "../../utils/priceFormatter";
 import { useContext } from "react";
-import { CoffeeContext } from "../contexts/CoffeeContext";
+import { CoffeeContext } from "../../contexts/CoffeeContext";
 
 interface Coffee {
     coffeeName: string,

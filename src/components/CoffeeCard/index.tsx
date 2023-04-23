@@ -1,11 +1,11 @@
-import { CoffeeContainer } from "./CoffeeCard.styles";
+import { CoffeeContainer } from "./styles";
 import { ShoppingCart } from "phosphor-react";
 import { useForm } from "react-hook-form";
 import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useContext } from "react";
-import { CoffeeContext } from "../contexts/CoffeeContext";
-import { priceFormatter } from "../utils/priceFormatter";
+import { CoffeeContext } from "../../contexts/CoffeeContext";
+import { priceFormatter } from "../../utils/priceFormatter";
 
 const CoffeeQuantityFormSchema = z.object({
     qtd: z.number(),

@@ -1,9 +1,9 @@
-import { HeaderContainer } from "./HeaderStyles";
-import LogoCaffee from '../images/Coffee_Delivery_Logo.svg'
+import { HeaderContainer } from "./styles";
+import LogoCaffee from '../../images/Coffee_Delivery_Logo.svg'
 import { MapPin, ShoppingCart} from 'phosphor-react'
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
-import { CoffeeContext } from "../contexts/CoffeeContext";
+import { CoffeeContext } from "../../contexts/CoffeeContext";
 
 export function Header () {
     const {cart, addressData} = useContext(CoffeeContext)
