@@ -1,5 +1,5 @@
 <h1>Coffee Delivery</h1>
-<h3> Feito en React com TypeScript, este é o projeto de uma cafeteria fictícia na qual é possível gerenciar um carrinho de compras com os produtos escolhidos.</h3>
+<h3> Feito em React com TypeScript, este é o projeto de uma cafeteria fictícia na qual é possível gerenciar um carrinho de compras com os produtos escolhidos.</h3>
 <h3> Você pode adicionar os itens no carrinho, além de remover ou aumentar a quantidade de itens no carrinho. </h3>
 <h3> É exibido o valor total da soma dos itens no carrinho e o usuário pode preencher o endereço de entrega, para então, concluir a compra.</h3>
 <h3> Além do ReactJS, neste projeto eu usei as bibliotecas: styled-components, react-hook-form, zod, react-router-dom, phosphor-react e radix-ui/react-radio-group.</h3>
