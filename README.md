@@ -3,6 +3,7 @@
 <h3> Você pode adicionar os itens no carrinho, além de remover ou aumentar a quantidade de itens no carrinho. </h3>
 <h3> É exibido o valor total da soma dos itens no carrinho e o usuário pode preencher o endereço de entrega, para então, concluir a compra.</h3>
 <h3> Além do ReactJS, neste projeto eu usei as bibliotecas: styled-components, react-hook-form, zod, react-router-dom, phosphor-react e radix-ui/react-radio-group.</h3>
+<h3> Os dados do carrinho e do endereço de entrega ficam armazenados no LocalStorage do navegador, desta forma, os dados não são perdidos ao recarregar a página.</h3>
 <h3> Este projeto é um desafio do curso Ignite da Rocketseat que eu fiz para melhorar minhas habilidades com o React JS. </h3>
 <h3> Pra quem tiver interesse em baixar e rodar o projeto, use o comando: npm run dev </h3>
 <h3> Visualizar a aplicação: https://coffee-delivery-ten-blond.vercel.app/</h3>
