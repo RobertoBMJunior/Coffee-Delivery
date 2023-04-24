@@ -10,6 +10,25 @@ export const CoffeeContainer = styled.div`
     flex-direction: column;
     align-items: center;
     
+    .addedToCart{
+        font-size: 1rem;
+        width: 90px;
+        font-weight: 700;
+
+        text-align: center;
+
+        background-color: ${props => props.theme["yellow-light"]};
+        color: ${props => props.theme["yellow-dark"]};
+        border: 1px solid ${props => props.theme["yellow-dark"]};
+        border-radius: 3px;
+
+        position: relative;
+        top: -288px;
+        left: -82px;
+
+        transform: rotate(-45deg);
+        
+    }
 
     .imgCoffee{
         margin-top: -20px;
@@ -70,7 +89,7 @@ export const CoffeeContainer = styled.div`
             border: 0;
             border-radius: 4px;
 
-            padding: 8px 20px;
+            padding: 8px 16px;
 
             margin-right: 0.5rem;
 

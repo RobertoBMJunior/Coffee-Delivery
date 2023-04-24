@@ -53,9 +53,9 @@ export function ChosenCoffeeCard ({coffeeName,image,price,qtd}:Coffee) {
                     <h2>{coffeeName}</h2>
                     <div className="qtd">
                         <div className="quantity">
-                            <Minus onClick={handleDecreaseQuantity}/>
+                            <Minus onClick={handleDecreaseQuantity} size={18}/>
                             <span>{qtd}</span>
-                            <Plus onClick={handleIncreaseQuantity}/>
+                            <Plus onClick={handleIncreaseQuantity} size={18}/>
                         </div>
                         <button>
                             <Trash size={16}/>

@@ -3,7 +3,7 @@ import { ShoppingCart } from "phosphor-react";
 import { useForm } from "react-hook-form";
 import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CoffeeContext } from "../../contexts/CoffeeContext";
 import { priceFormatter } from "../../utils/priceFormatter";
 
@@ -33,14 +33,16 @@ interface Coffee {
 export function CoffeeCard ({image,information,information2,information3, coffeeName,description,price}: CoffeeCardProps) {
     const {cart,setCart} = useContext(CoffeeContext)
 
-    const {register,handleSubmit} = useForm<CoffeeQuantityFormInputs>({
+    const {register,handleSubmit,reset} = useForm<CoffeeQuantityFormInputs>({
         resolver: zodResolver(CoffeeQuantityFormSchema),
     })
+
+    const [isAdded, setIsAdded] = useState(false)
 
     function handleAddCart(data: CoffeeQuantityFormInputs) {
         const cartCopia = cart;
         var cartchanged = -1;
-
+        
         cartCopia.forEach(item => {
             if(item.coffeeName === coffeeName) {
                 item.qtd = data.qtd
@@ -62,12 +64,30 @@ export function CoffeeCard ({image,information,information2,information3, coffee
             setCart([...cart,newCoffee])
         }
 
+        reset()
     }
 
+    useEffect(()=>{
+        const cartCopia = [...cart];
+        var adicionado= -1;
+        
+        cartCopia.forEach(item => {
+            if(item.coffeeName === coffeeName) {
+                adicionado = 1
+            }
+        })
+
+        if(adicionado===1){
+            setIsAdded(true)
+        }
+        else{
+            setIsAdded(false)
+        }
+    },[cart])
 
     return(
         <CoffeeContainer>
-            <img src={image} alt="Expresso Tradicional"  className="imgCoffee"/>
+            <img src={image} alt={coffeeName}  className="imgCoffee"/>
             <div className="informations">
                 <span className="information">{information}</span>
                 {information2 ? <span className="information">{information2}</span> : null}
@@ -84,7 +104,8 @@ export function CoffeeCard ({image,information,information2,information3, coffee
                     <input 
                         type="number" 
                         placeholder="0" 
-                        min={1} 
+                        min={1}
+                        title="Insira a quantidade" 
                         {...register('qtd', {valueAsNumber: true})}
                     />
                     <button className="cart" title="Adicionar ao carrinho">
@@ -92,6 +113,7 @@ export function CoffeeCard ({image,information,information2,information3, coffee
                     </button>
                 </form>
             </div>
+            {isAdded ? <span className="addedToCart">Adicionado ao Carrinho</span> : null}
         </CoffeeContainer>
     )
 }

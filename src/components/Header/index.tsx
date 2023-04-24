@@ -10,16 +10,16 @@ export function Header () {
 
     return(
         <HeaderContainer>
-            <NavLink to='/'>
+            <NavLink to='/' title="Ir para a Home">
                 <img src={LogoCaffee} alt="" />
             </NavLink>
             <div className="locale_and_cart">
-                <NavLink to='/checkout' className="locale">
+                <NavLink to='/checkout' className="locale" title="Endereço de Entrega">
                     <MapPin size={20} weight="fill"/>
                     <span>{addressData.city ? `${addressData.city}, ${addressData.uf}` : 'SEU ENDEREÇO'}</span>
                 </NavLink>
 
-                <NavLink to="/checkout" className='cart'>
+                <NavLink to="/checkout" className='cart' title="Ir para o Carrinho">
                     <ShoppingCart size={20} weight="fill"/>
                     {cart.length != 0 ? <span>{cart.length}</span> : '' }
                 </NavLink>

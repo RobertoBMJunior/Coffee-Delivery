@@ -98,21 +98,21 @@ export function CoffeeProvider({children}:CoffeeProviderProps) {
             information: 'TRADICIONAL',
             coffeeName: 'Expresso Tradicional',
             description: 'O tradicional café feito com água quente e grãos moídos',
-            price: 9.90
+            price: 7.90
         },
         {
             image: ExpressoAmericano,
             information: 'TRADICIONAL',
             coffeeName: 'Expresso Americano',
             description: 'Expresso diluído, menos intenso que o tradicional',
-            price: 9.90
+            price: 7.90
         },
         {
             image: ExpressoCremoso,
             information: 'TRADICIONAL',
             coffeeName: 'Expresso Cremoso',
             description: 'Café expresso tradicional com espuma cremosa',
-            price: 9.90
+            price: 7.90
         },
         {
             image: ExpressoGelado,
@@ -120,7 +120,7 @@ export function CoffeeProvider({children}:CoffeeProviderProps) {
             information2: 'GELADO',
             coffeeName: 'Expresso Gelado',
             description: 'Bebida preparada com café expresso e cubos de gelo',
-            price: 9.90
+            price: 8.90
         },
         {
             image: CafeComLeite,
@@ -152,7 +152,7 @@ export function CoffeeProvider({children}:CoffeeProviderProps) {
             information2: 'COM LEITE',
             coffeeName: 'Macchiato',
             description: 'Café expresso misturado com um pouco de leite quente e espuma',
-            price: 9.90
+            price: 11.90
         },
         {
             image: Mocaccino,
@@ -160,7 +160,7 @@ export function CoffeeProvider({children}:CoffeeProviderProps) {
             information2: 'COM LEITE',
             coffeeName: 'Mocaccino',
             description: 'Café expresso com calda de chocolate, pouco leite e espuma',
-            price: 9.90
+            price: 12.90
         },
         {
             image: ChocolateQuente,
@@ -168,7 +168,7 @@ export function CoffeeProvider({children}:CoffeeProviderProps) {
             information2: 'COM LEITE',
             coffeeName: 'Chocolate Quente',
             description: 'Bebida feita com chocolate dissolvido no leite quente e café',
-            price: 9.90
+            price: 12.90
         },
         {
             image: Cubano,
@@ -177,21 +177,21 @@ export function CoffeeProvider({children}:CoffeeProviderProps) {
             information3: 'GELADO',
             coffeeName: 'Cubano',
             description: 'Drink gelado de café expresso com rum, creme de leite e hortelã',
-            price: 9.90
+            price: 15.90
         },
         {
             image: Havaiano,
             information: 'ESPECIAL',
             coffeeName: 'Havaiano',
             description: 'Bebida adocicada preparada com café e leite de coco',
-            price: 9.90
+            price: 16.90
         },
         {
             image: Arabe,
             information: 'ESPECIAL',
             coffeeName: 'Árabe',
             description: 'Bebida preparada com grãos de café árabe e especiarias',
-            price: 9.90
+            price: 19.90
         },
         {
             image: Irlandes,
@@ -199,7 +199,7 @@ export function CoffeeProvider({children}:CoffeeProviderProps) {
             information2: 'ALCOÓLICO',
             coffeeName: 'Irlandês',
             description: 'Bebida a base de café, uísque irlandês, açúcar e chantilly',
-            price: 9.90
+            price: 23.90
         },
     ]
 

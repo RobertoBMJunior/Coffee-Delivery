@@ -43,7 +43,7 @@ export const ChosenCoffeeContainer = styled.div`
                     border: 0;
                     border-radius: 4px;
         
-                    padding: 8px 20px;
+                    padding: 8px 16px;
         
                     color: ${props => props.theme["gray-800"]};
                     font-size: 1rem;
